@@ -13,7 +13,10 @@ This is the repository for Lecture 02 of the Saint Louis University course SOC 4
 ### Lecture Objectives
 At the end of this lecture and its corresponding assignments, students should be able to:
 
-1.
+1. Compose a basic R Notebook
+2. Organize a very simple R project directory with a single subfolder
+3. Create basic plots using \texttt{ggplot2}
+4. Employ \texttt{dplyr} to carry out basic cleaning of data
 
 ### Lecture Resources
 
