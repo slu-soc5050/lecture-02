@@ -3,17 +3,22 @@ See the [topic index](https://slu-soc5050.github.io/topic-index/) and the [packa
 
 ## Key Topics
 
-*
+* Analysis development, including using R Projects and RNotebooks
+* Basics of data cleaning
+* Basics of plot production and the grammar of graphics
 
 ## Key Tools
 ### `R` Packages
 
-*
+* `base`
+* `knitr`
+* `rmarkdown`
+* `tidyverse`
+    * `dplyr`
+    * `ggplot2`
+    * `magrittr`
+* `utils`
 
 ### Course Tools
 
 * `R`
-
-### Outside Tools
-
-*

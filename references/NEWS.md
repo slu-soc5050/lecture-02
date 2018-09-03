@@ -1,4 +1,12 @@
-# lecture-02 v18.1.0.9000
+# lecture-02 v18.2.0
+
+* Update `DESCRIPTION`
+* Add learning objectives
+* Update references materials
+* Add handouts
+* Add Lab-01 instructions
+
+# lecture-02 v18.1.0 (not tagged)
 
 * Initial repo setup:
     * Add `.github/` directory with community documents
