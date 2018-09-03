@@ -1,0 +1,216 @@
+\documentclass{tufte-handout}
+
+\usepackage{xcolor}
+
+% set image attributes:
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% set hyperlink attributes
+\hypersetup{colorlinks}
+
+% create environment for bottom paragraph:
+\newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
+
+% ============================================================
+
+% define the title
+\title{SOC 4015/5050: Lecture-02 Functions}
+\author{Christopher Prener, Ph.D.}
+\date{Fall 2018}
+% ============================================================
+\begin{document}
+% ============================================================
+\maketitle % generates the title
+% ============================================================
+
+\vspace{5mm}
+\section{Packages}
+\begin{itemize}
+\item \texttt{base}
+\item \texttt{knitr}
+\item \texttt{rmarkdown}
+\item \texttt{tidyverse}
+\begin{itemize}
+\item \texttt{dplyr}
+\item \texttt{ggplot2}
+\item \texttt{magrittr}
+\end{itemize}
+\item \texttt{utils}
+\end{itemize}
+
+
+\vspace{5mm}
+\begin{center}
+{\Large\textit{\textbf{Lecture-02a: Introducing \texttt{ggplot2}}}}
+\end{center}
+
+\section{Basic Plot}
+\texttt{ggplot2::}{\color{red}\texttt{ggplot}}\texttt{(data = \textit{dataFrame}) +}
+\par \noindent \hspace{5mm} {\color{red}\texttt{geom}}\texttt{(mapping = aes(\textit{aesthetic}))}
+
+\vspace{5mm}
+\section{Geometric Objects}\marginnote{Each of these geoms must be paired with an initial \texttt{ggplot} function call.}
+\subsection{Line Plot}
+{\color{red}\texttt{geom\_freqpoly}}\texttt{(mapping = aes(\textit{aesthetic}))}
+
+\vspace{3mm}
+\subsection{Bar Plot}
+{\color{red}\texttt{geom\_bar}}\texttt{(mapping = aes(\textit{aesthetic}))}
+
+\vspace{3mm}
+\subsection{Scatter Plot}
+{\color{red}\texttt{geom\_point}}\texttt{(mapping = aes(x = \textit{var1}, y = \textit{var2}))}
+
+\vspace{3mm}
+\subsection{Smoothed Line}
+{\color{red}\texttt{geom\_smooth}}\texttt{(mapping = aes(x = \textit{var1}, y = \textit{var2}))}
+
+\vspace{3mm}
+\subsection{Box Plot}\marginnote{The \texttt{x} variable should be the discrete variable.}
+{\color{red}\texttt{geom\_box}}\texttt{(mapping = aes(x = \textit{var1}, y = \textit{var2}))}
+
+\newpage
+\begin{center}
+{\Large\textit{\textbf{Lecture-02b: The Grammar of Graphics}}}
+\end{center}
+
+\section{Basic Template}
+\texttt{ggplot2::}{\color{red}\texttt{ggplot}}\texttt{(data = \textit{dataFrame}) +}
+\par \noindent \hspace{5mm} {\color{red}\texttt{geom}}\texttt{(mapping = 
+aes(\textit{aesthetic}),}
+\par \noindent \hspace{8mm} \texttt{stat = \textit{statistics},}
+\par \noindent \hspace{8mm} \texttt{position = \textit{position},}
+\par \noindent \hspace{5mm} \texttt{) +}
+\par \noindent \hspace{5mm} {\color{red}\texttt{coordinateFunction}}\texttt{ +}
+\par \noindent \hspace{5mm} {\color{red}\texttt{facetFunction}}
+
+\vspace{5mm}
+\section{Geometric Objects}\marginnote{This geom must be paired with an initial \texttt{ggplot} function call.}
+\subsection{Area Plot}
+{\color{red}\texttt{geom\_area}}\texttt{(mapping = aes(\textit{aesthetic}), stat = "bin")}
+
+\vspace{5mm}
+\section{Aesthetics}\marginnote{Use fill for bar plots and histograms, and color for point-based plots like scatter plots.}
+\subsection{Add One Color}
+{\color{red}\texttt{geom}}\texttt{(mapping = aes(\textit{aesthetic}, \textit{color} = "\textit{colorText}"))}
+
+\vspace{3mm}
+\subsection{Add Color Based on Additional Variable}
+{\color{red}\texttt{geom}}\texttt{(mapping = aes(\textit{aesthetic}, \textit{color} = \textit{colorVar}))}
+
+\vspace{5mm}
+\section{Position Adjustments}
+\subsection{Dodge}
+{\color{red}\texttt{geom}}\texttt{(mapping = aes(\textit{aesthetic}, fill = \textit{colorVar}),}
+\par \noindent \hspace{5mm} \texttt{position = "dodge")}
+
+\vspace{3mm}
+\subsection{Jitter}
+{\color{red}\texttt{geom}}\texttt{(mapping = aes(x = \textit{var1}, y = \textit{var2}, color = \textit{colorVar}),}
+\par \noindent \hspace{5mm} \texttt{position = "jitter")}
+
+\vspace{5mm}
+\section{Coordinate Systems}
+\subsection{Flip x and y Axes}
+{\color{red}\texttt{geom}}\texttt{(mapping = aes(\textit{aesthetic})) +}
+\par \noindent \hspace{5mm} {\color{red}\texttt{coord\_flip()}}
+
+\newpage
+\begin{center}
+{\Large\textit{\textbf{Lecture-02c: Verbs for Cleaning Data}}}
+\end{center}
+
+\section{Verbs for Cleaning Data}
+\subsection{Rename Variables}
+\texttt{dplyr::}{\color{red}\texttt{rename}}\texttt{(\textit{dataFrame}, \textit{newName} = \textit{oldName})}
+
+\vspace{3mm}
+\subsection{Reorder Variables, Low to High}\marginnote{\texttt{\textit{varlist}} items should be separated by commas}
+\texttt{dplyr::}{\color{red}\texttt{arrange}}\texttt{(\textit{dataFrame}, \textit{varlist})}
+
+\vspace{3mm}
+\subsection{Reorder Variables, High to Low}\marginnote{\texttt{\textit{varlist}} items should be separated by commas}
+\texttt{dplyr::}{\color{red}\texttt{arrange}}\texttt{(\textit{dataFrame}, desc(\textit{varlist}))}
+
+\vspace{3mm}
+\subsection{Subset Data, Specific Observations}
+\texttt{dplyr::}{\color{red}\texttt{filter}}\texttt{(\textit{dataFrame}, \textit{expression})}
+
+\vspace{3mm}
+\subsection{Subset Data, Keep Specific Variables}\marginnote{\texttt{\textit{varlist}} items should be separated by commas}
+\texttt{dplyr::}{\color{red}\texttt{select}}\texttt{(\textit{dataFrame}, \textit{varlist})}
+
+\vspace{3mm}
+\subsection{Subset Data, Drop Specific Variables}\marginnote{\texttt{\textit{varlist}} items should be separated by commas with each item individually labeled with the dash drop symbol}
+\texttt{dplyr::}{\color{red}\texttt{select}}\texttt{(\textit{dataFrame}, -\textit{varlist})}
+
+\vspace{3mm}
+\subsection{Create New Variables}
+\texttt{dplyr::}{\color{red}\texttt{mutate}}\texttt{(\textit{dataFrame}, \textit{newVar} = \textit{expression})}
+
+\vspace{5mm}
+\section{\texttt{ifelse} Outcomes}
+\texttt{base::}{\color{red}\texttt{ifelse}}\texttt{(\textit{expression, trueOutcome, falseOutcome})}
+
+\newpage
+\section{Pipe Operator}
+\subsection{Basic Syntax}
+ {\color{red}\texttt{\%>\%}} - ``then''
+ 
+ \vspace{3mm}
+ \subsection{Example with Assignment}\marginnote{Remember that \texttt{dataFrame} names do not need to be included for many functions when included in piped code}
+ \texttt{mpg} {\color{red}\texttt{\%>\%}}
+ \par \noindent \hspace{5mm} {\color{red}\texttt{select}}\texttt{(manufacturer, model, cty, hwy)} {\color{red}\texttt{\%>\%}}
+ \par \noindent \hspace{5mm} {\color{red}\texttt{rename}}\texttt{(cityMpg = cty)} {\color{red}\texttt{\%>\%}}
+  \par \noindent \hspace{5mm} {\color{red}\texttt{rename}}\texttt{(hwyMpg = hwy)} {\color{red}\texttt{->}} \texttt{autoData}
+
+\vspace{5mm}
+\section{Logical Operators}
+ {\color{red}\texttt{\&}} - ``and''
+\par \noindent {\color{red}\texttt{|}} - ``or''
+
+\vspace{5mm}
+\section{Relational Operators}
+ {\color{red}\texttt{<}} - ``less than''
+\par \noindent {\color{red}\texttt{<=}} - ``less than or equal to''
+\par \noindent {\color{red}\texttt{>}} - ``greater than''
+\par \noindent {\color{red}\texttt{>=}} - ``greater than or equal to''
+\par \noindent {\color{red}\texttt{==}} - ``exactly equal to''
+\par \noindent {\color{red}\texttt{!=}} - ``not equal to''
+
+\vspace{5mm}
+\section{Arithmetic Operators}
+ {\color{red}\texttt{+}} - ``addition''
+\par \noindent {\color{red}\texttt{-}} - ``subtraction''
+\par \noindent {\color{red}\texttt{*}} - ``multiplication''
+\par \noindent {\color{red}\texttt{/}} - ``division''
+\par \noindent {\color{red}\texttt{\^}} - ``exponentiation''
+
+\vspace{5mm}
+\section{Viewing Observations}
+\subsection{First Six Observations}
+\texttt{utils::}{\color{red}\texttt{head}}\texttt{(\textit{dataFrame})}
+
+\vspace{3mm}
+\subsection{Last Six Observations}
+\texttt{utils::}{\color{red}\texttt{tail}}\texttt{(\textit{dataFrame})}
+
+\vspace{5mm}
+\section{Frequency Tables}
+\texttt{base::}{\color{red}\texttt{table}}\texttt{(\textit{dataFrame}\$\textit{var})}
+
+\newpage
+\begin{center}
+{\Large\textit{\textbf{Lecture-02d: Structuring Notebooks}}}
+\end{center}
+
+\section{Create New R Notebook}
+\textsf{File $\triangleright$ New File $\triangleright$} {\color{red}\textsf{R Notebook}}
+
+\vspace{5mm}
+\section{Create New Project}
+\textsf{File $\triangleright$} {\color{red}\textsf{New Project}} \textsf{$\triangleright$ New Directory $\triangleright$ New Project}
+
+% ============================================================
+\end{document}

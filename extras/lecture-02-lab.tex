@@ -1,0 +1,87 @@
+\documentclass{tufte-handout}
+
+\usepackage{xcolor}
+
+% set image attributes:
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% set hyperlink attributes
+\hypersetup{colorlinks}
+
+% set table attributes
+\usepackage{tabu}
+\usepackage{booktabs}
+
+% create environment for bottom paragraph:
+\newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
+
+% =======================================================
+
+% define the title
+\title{SOC 4930/5050: Lab-01 - Initial Data Cleaning }
+\author{Christopher Prener, Ph.D.}
+\date{Fall 2018}
+% ======================================================
+\begin{document}
+% =======================================================
+\maketitle % generates the title
+% =======================================================
+
+\section{Directions}
+Complete all of the following questions using the data from the \texttt{testDriveR} package.\sidenote{See course website for latest details on installing \texttt{testDriveR}, which can be found on the Course Software page!} Your well-formatted R Notebook source (the \texttt{.Rmd} file) and \texttt{html} output should be \textit{ready} to be uploaded to your assignments repository by 4:15pm on Monday, September 10\textsuperscript{th}, 2017. We'll go through the submission itself together as a class.
+
+\vspace{5mm}
+\section{Analysis Development: Create a Project Folder System}
+\begin{enumerate}
+\item Using RStudio, add an R Project to a new directory named \texttt{Lab-01}. To do this, you will want to go to: \textsf{File $\triangleright$} {\color{red}\textsf{New Project}} \textsf{$\triangleright$ New Directory $\triangleright$ New Project} and save your new folder and R Project to your Desktop or another similar location where you can easily find it.
+\item RStudio should automatically open your new project. Verify this by looking up at the righthand corner of RStudio's window - you should see a blue box icon with a dark blue \texttt{R} in it. Next to that should be the text \texttt{Lab-01}.
+\item R Projects set something called the working directory, which is a critically important piece of programming that we'll continue to talk about this semester.
+\item In the \textsf{Files} tab on the lower righthand side of RStudio's screen, add a New Folder using the \textsf{New Folder} button right below \textsf{Files}. Name this new folder \texttt{docs}.
+\item Create a new notebook by going to \textsf{File $\triangleright$ New File $\triangleright$} {\color{red}\textsf{R Notebook}}. Save it within that \texttt{docs/} subdirectory you just created.
+\item Edit the heading of your notebook so that it looks like so: \\
+\begin{verbatim}
+---
+title: "Lab-02 Notebook"
+author: "your name"
+date: '(`r format(Sys.time(), "%B %d, %Y")`)'
+output: 
+  github_document: default
+  html_notebook: default 
+---
+\end{verbatim}
+\item Use RMarkdown syntax to create your first assignment notebook! Make sure it has an introductory section, a section for loading packages, a section for loading data, and a section for each part below. These sections should be second-level headings (e.g. \texttt{\#\# Introduction}). In Both Part 1 and Part 2, use third level headings to designate question numbers (e.g. \texttt{\#\#\# Question 9}).
+\item When you are done, ``knit'' your document by clicking the \textsf{Knit} button in the toolbar at the top of the notebook.
+\end{enumerate}
+
+\vspace{5mm}
+\section{Part 1: Cleaning Data}
+\textit{Use the \texttt{auto17} data frame saved in the \texttt{testDriveR} package and make the following changes using ``piped'' code:}
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item Extract observations for German cars (those manufactured by Audi, BMW, Mercedes-Benz, Porsche, and Volkswagon). 
+\item Keep only the following variables: \texttt{id, mfrDivision, carLine, combFE, guzzlerStr, displ}
+\item Rename the \texttt{mfrDivision} and \texttt{combFE} variables.\sidenote{Not sure what these variables measure? Type \texttt{?auto17} into the console of RStudio and scroll through the help file for the data set.}
+\item Create a new logical variable that is \texttt{TRUE} if the vehicle is a guzzler (\texttt{guzzlerStr == "G"}) and is \texttt{FALSE} otherwise.
+\item Re-order the data frame based on your re-named \texttt{combFE} variable from high to low.
+\item Print the ``head'' of the data frame - what is the most fuel efficient German car for sale in the United States for model year 2017?
+\item How many German cars in total are for sale in the United States for model year 2017?
+\item How many German cars are ``gas guzzlers''?
+\end{enumerate}
+
+\vspace{5mm}
+\section{Part 2: Plotting Data}
+\textit{Use the your cleaned German car data to produce the following plots:}.
+\begin{enumerate}
+\setcounter{enumi}{16}
+\item Create a bar plot of the logical ``gas guzzler'' variable you created.
+\item Create a histogram of the average fuel efficiency variable.
+\item Create a scatter plot of the average fuel efficiency and \texttt{displ} variables that (a) highlights ``gas guzzler'' vehicles and (b) uses the ``jitter'' positions adjustment.
+\end{enumerate}
+
+\vspace{5mm}
+\section{Reminders}
+Remember that a replication file will be posted on GitHub and linked to from the course website. I will also provide some screen shots of the analysis development section to help you navigate around RStudio's user interface.
+
+% ============================================================
+\end{document}
