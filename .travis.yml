@@ -2,6 +2,11 @@ language: r
 sudo: false
 cache: false
 
+r:
+  - oldrel
+  - release
+  - devel
+  
 os:
   - linux
   - osx
