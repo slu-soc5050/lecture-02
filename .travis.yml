@@ -2,12 +2,15 @@ language: r
 sudo: false
 cache: false
 
-r:
-  - oldrel
-  - release
-
 os:
+  - linux
   - osx
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - r: devel
+      os: osx
 
 script:
   - Rscript -e "rmarkdown::render('assignments/lab-01-replication/docs/lab-01-replication.Rmd')"
