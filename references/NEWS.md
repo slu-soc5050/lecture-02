@@ -1,3 +1,7 @@
+# lecture-02 v18.2.1
+
+* Add lab replication files
+
 # lecture-02 v18.2.0
 
 * Update `DESCRIPTION`
