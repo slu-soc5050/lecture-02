@@ -1,4 +1,4 @@
-Lecture-02b Notebook
+Lecture-02c Notebook
 ================
 Christopher Prener, Ph.D.
 (September 06, 2018)
