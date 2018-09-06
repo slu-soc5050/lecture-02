@@ -1,0 +1,39 @@
+---
+title: "Lecture-02d Notebook"
+author: "Christopher Prener, Ph.D."
+date: '(`r format(Sys.time(), "%B %d, %Y")`)'
+output: 
+  github_document: default
+  html_notebook: default 
+---
+
+## Introduction
+This notebook contains sample code for Lecture-02d - Structuring Notebooks.
+
+## Dependencies
+This notebook requires two packages - `ggplot2` and `dplyr`.
+
+```{r load-packages}
+# tidyverse packages
+library(dplyr)       # cleaning data
+library(ggplot2)     # plotting data
+```
+
+## Load Data
+For this set of examples, we'll take the `mpg` data from the `ggplot2` package and assign it to a new object to work with:
+
+```{r load-data}
+autoData <- mpg
+```
+
+For the rest of the code, we'll reference `autoData` as a starting point.
+
+## Part 1
+Part 1 of the assignment involves cleaning data from the mpg data frame.
+
+### Question 1
+The first question asks to explore the structure of the `autoData` data:
+
+```{r}
+str(autoData)
+```
