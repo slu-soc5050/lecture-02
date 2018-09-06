@@ -21,3 +21,5 @@ script:
   - Rscript -e "rmarkdown::render('assignments/lab-01-replication/docs/lab-01-replication.Rmd')"
   - Rscript -e "rmarkdown::render('examples/lecture-02a.Rmd')"
   - Rscript -e "rmarkdown::render('examples/lecture-02b.Rmd')"
+  - Rscript -e "rmarkdown::render('examples/lecture-02c.Rmd')"
+  - Rscript -e "rmarkdown::render('examples/lecture-02d.Rmd')"
