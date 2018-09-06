@@ -1,3 +1,8 @@
+# lecture-02 v18.3.0
+
+* Add all example code notebooks
+* Add starter notebook in `extras/`
+
 # lecture-02 v18.2.1
 
 * Add lab replication files
