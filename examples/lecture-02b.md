@@ -79,7 +79,7 @@ plots.
 
 ### Adding Color Arbitraility
 
-We can use the `color` argument with a **quoted** input to arbitraility
+We can use the `color` argument with a **quoted** input to arbitrarily
 select colors:
 
 ``` r
@@ -140,9 +140,9 @@ ggplot(data = mpg) +
 
 ### Position Adjustments
 
-In addition to creating stacked plots, we can also disaggregate our data
-so that we get a series of bars for each `fill` category within a given
-`x` category. This is done with the `position = "dodge"` argument:
+In addition to creating stacked plots, we can also dis-aggregate our
+data so that we get a series of bars for each `fill` category within a
+given `x` category. This is done with the `position = "dodge"` argument:
 
 ``` r
 ggplot(data = mpg) +
@@ -152,10 +152,10 @@ ggplot(data = mpg) +
 ![](lecture-02b_files/figure-gfm/dodgeBar-color-1.png)<!-- -->
 
 This helps us see that an overwhelming number of cars that are SUVs have
-two particular typoes of transmissions, for example.
+two particular types of transmissions, for example.
 
 We can also use a different type of position adjustment to reveal
-“missing” points on a scatterplot. A normal scatter plot stacks
+“missing” points on a scatter plot. A normal scatter plot stacks
 identical combinations of x,y pairs in a way that makes the data appear
 less numerous than they actually are. For example:
 

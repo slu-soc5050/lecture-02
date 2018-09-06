@@ -58,7 +58,7 @@ ggplot(data = mpg) +
 Aesthetic adjustments allow us to alter the appearance and design of our plots.
 
 ### Adding Color Arbitraility 
-We can use the `color` argument with a **quoted** input to arbitraility select colors:
+We can use the `color` argument with a **quoted** input to arbitrarily select colors:
 
 ```{r scatter-color-fixed}
 ggplot(data = mpg) +
@@ -99,16 +99,16 @@ ggplot(data = mpg) +
 ```
 
 ### Position Adjustments
-In addition to creating stacked plots, we can also disaggregate our data so that we get a series of bars for each `fill` category within a given `x` category. This is done with the `position = "dodge"` argument:
+In addition to creating stacked plots, we can also dis-aggregate our data so that we get a series of bars for each `fill` category within a given `x` category. This is done with the `position = "dodge"` argument:
 
 ```{r dodgeBar-color}
 ggplot(data = mpg) +
   geom_bar(mapping = aes(x = class, fill = trans), position = "dodge")
 ```
 
-This helps us see that an overwhelming number of cars that are SUVs have two particular typoes of transmissions, for example.
+This helps us see that an overwhelming number of cars that are SUVs have two particular types of transmissions, for example.
 
-We can also use a different type of position adjustment to reveal "missing" points on a scatterplot. A normal scatter plot stacks identical combinations of x,y pairs in a way that makes the data appear less numerous than they actually are. For example:
+We can also use a different type of position adjustment to reveal "missing" points on a scatter plot. A normal scatter plot stacks identical combinations of x,y pairs in a way that makes the data appear less numerous than they actually are. For example:
 
 ```{r scatter}
 ggplot(data = mpg) +
