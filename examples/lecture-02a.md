@@ -21,9 +21,9 @@ library(ggplot2)     # plotting data
 
 We actually aren’t going to load any data for these examples. The `mpg`
 data is automatically loaded into `R`’s memory (but not your
-enviornment) when we load the `ggplot2` package. We can refer to it
+environment) when we load the `ggplot2` package. We can refer to it
 directly, as we can all data pre-loaded in packages, without ever
-creating an object in our enviornment.
+creating an object in our environment.
 
 ## Plots
 
@@ -85,7 +85,7 @@ ggplot(data = mpg) +
 
 These are good for comparing two *continuous* variables. This is similar
 to a scatter plot but it summarizes the general trend. They are best
-used togehter to illustrate both the underlying points *and* the trend.
+used together to illustrate both the underlying points *and* the trend.
 
 ``` r
 ggplot(data = mpg) +
