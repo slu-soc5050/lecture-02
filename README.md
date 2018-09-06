@@ -23,6 +23,7 @@ At the end of this lecture and its corresponding assignments, students should be
 * The [lecture webpage](https://slu-soc5050.github.io/lecture-02) contains links to resources as well the lecture slides
 * The [`SETUP.md`](/references/SETUP.md) file in the [`references/`](/references) directory contains a list of packages required for this lecture
 * The [`references/`](/references) directory also contains other notes on changes to the repository, key topics, terms, data sources, and software. Some of this information is a duplicate of material on the course website.
+* A [starter notebook](/references/starterNotebook.Rmd) is included as a base for creating your assignment notebooks moving forward.
 
 ### Access Lecture
 Students in my course should clone this repository into their course folder system. Others can quickly download this lecture to their `Desktop` using `usethis`:
